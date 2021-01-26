@@ -5,6 +5,9 @@ Powered by [Yamato Nagata](https://twitter.com/514YJ)
 
 [GitHub](https://github.com/delta114514/defern)
 
+installation:
+`$ pip install defern`
+
 ```python
 from defern import defern, deferner, defern_this, here
 

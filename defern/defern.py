@@ -9,8 +9,7 @@ from functools import wraps
 
 
 def _outer_frame(frame: FrameType = None) -> FrameType:
-    frame = frame or inspect.currentframe().f_back.f_back
-    return frame
+    return frame or inspect.currentframe().f_back.f_back
 
 
 class Defern:
@@ -57,7 +56,7 @@ def defern_this(func: Callable) -> Callable:
 
 
 def here() -> FrameType:
-    return inspect.currentframe().f_back.f_back
+    return inspect.currentframe().f_back
 
 
 def defer_multiple_function(frame):
