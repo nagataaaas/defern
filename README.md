@@ -2,7 +2,7 @@ Provides Go-like `defer`
 -----------
 Powered by [Yamato Nagata](https://twitter.com/514YJ)
 
-[GitHub](https://github.com/delta114514/defern)
+[GitHub](https://github.com/nagataaaas/defern)
 
 installation:
 `$ pip install defern`
