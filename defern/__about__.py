@@ -1,7 +1,7 @@
 __title__ = "defern"
-__description__ = "Easy converter between Kanji-Number and Integer"
+__description__ = "Provides Go-like `defer`"
 __url__ = "https://github.com/nagataaaas/defern"
-__version_info__ = ("0", "0", "3")
+__version_info__ = ("0", "0", "4")
 __version__ = ".".join(__version_info__)
 __author__ = "Yamato Nagata"
 __author_email__ = "chickenwingswillfly@gmail.com"

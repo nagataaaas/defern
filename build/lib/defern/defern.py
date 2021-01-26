@@ -9,8 +9,7 @@ from functools import wraps
 
 
 def _outer_frame(frame: FrameType = None) -> FrameType:
-    frame = frame or inspect.currentframe().f_back.f_back
-    return frame
+    return frame or inspect.currentframe().f_back.f_back
 
 
 class Defern:
@@ -35,13 +34,13 @@ def defern(func: Callable, *args, frame: FrameType = None, **kwargs) -> Tuple[An
 
 def deferner(func: Callable) -> Callable:
     @wraps(func)
-    def wrapper(*args, frame: FrameType = None, **kwargs):
+    def wrapper(*args, frame: FrameType = None, **kwargs) -> Tuple[AnyStr, Defern]:
         deferer = Defern(func, args, kwargs)
 
         new_variable_name = 'defern-{}'.format(uuid.uuid4())
         frame = _outer_frame(frame)
         frame.f_locals[new_variable_name] = deferer
-        return deferer
+        return new_variable_name, deferer
 
     return wrapper
 
@@ -49,7 +48,7 @@ def deferner(func: Callable) -> Callable:
 def defern_this(func: Callable) -> Callable:
     deferer = Defern(func, tuple(), dict())
 
-    new_variable_name = 'defern{}'.format(uuid.uuid4())
+    new_variable_name = 'defern-{}'.format(uuid.uuid4())
     frame = _outer_frame()
     frame.f_locals[new_variable_name] = deferer
 
@@ -57,7 +56,7 @@ def defern_this(func: Callable) -> Callable:
 
 
 def here() -> FrameType:
-    return inspect.currentframe().f_back.f_back
+    return inspect.currentframe().f_back
 
 
 def defer_multiple_function(frame):

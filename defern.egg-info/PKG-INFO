@@ -1,7 +1,7 @@
 Metadata-Version: 2.1
 Name: defern
-Version: 0.0.3
-Summary: Easy converter between Kanji-Number and Integer
+Version: 0.0.4
+Summary: Provides Go-like `defer`
 Home-page: https://github.com/nagataaaas/defern
 Author: Yamato Nagata
 Author-email: chickenwingswillfly@gmail.com

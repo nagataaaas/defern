@@ -48,7 +48,7 @@ def deferner(func: Callable) -> Callable:
 def defern_this(func: Callable) -> Callable:
     deferer = Defern(func, tuple(), dict())
 
-    new_variable_name = 'defern{}'.format(uuid.uuid4())
+    new_variable_name = 'defern-{}'.format(uuid.uuid4())
     frame = _outer_frame()
     frame.f_locals[new_variable_name] = deferer
 
