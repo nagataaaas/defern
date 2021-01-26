@@ -34,13 +34,13 @@ def defern(func: Callable, *args, frame: FrameType = None, **kwargs) -> Tuple[An
 
 def deferner(func: Callable) -> Callable:
     @wraps(func)
-    def wrapper(*args, frame: FrameType = None, **kwargs):
+    def wrapper(*args, frame: FrameType = None, **kwargs) -> Tuple[AnyStr, Defern]:
         deferer = Defern(func, args, kwargs)
 
         new_variable_name = 'defern-{}'.format(uuid.uuid4())
         frame = _outer_frame(frame)
         frame.f_locals[new_variable_name] = deferer
-        return deferer
+        return new_variable_name, deferer
 
     return wrapper
 

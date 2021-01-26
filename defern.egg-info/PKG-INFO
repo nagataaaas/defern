@@ -1,8 +1,8 @@
 Metadata-Version: 2.1
 Name: defern
-Version: 0.0.2
+Version: 0.0.3
 Summary: Easy converter between Kanji-Number and Integer
-Home-page: https://github.com/delta114514/defern
+Home-page: https://github.com/nagataaaas/defern
 Author: Yamato Nagata
 Author-email: chickenwingswillfly@gmail.com
 License: MIT
@@ -11,7 +11,7 @@ Description:
         -----------
         Powered by [Yamato Nagata](https://twitter.com/514YJ)
         
-        [GitHub](https://github.com/delta114514/defern)
+        [GitHub](https://github.com/nagataaaas/defern)
         
         installation:
         `$ pip install defern`
