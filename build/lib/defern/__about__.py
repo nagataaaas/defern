@@ -1,10 +1,10 @@
 __title__ = "defern"
 __description__ = "Provides Go-like `defer`"
 __url__ = "https://github.com/nagataaaas/defern"
-__version_info__ = ("0", "0", "4")
+__version_info__ = ("1", "0", "0")
 __version__ = ".".join(__version_info__)
 __author__ = "Yamato Nagata"
-__author_email__ = "chickenwingswillfly@gmail.com"
+__author_email__ = "nagata@mail.nagata.pro"
 __maintainer__ = "Yamato Nagata"
 __license__ = "MIT"
-__copyright__ = "(c) 2021 by Yamato Nagata"
+__copyright__ = "(c) 2021-2022 by Yamato Nagata"

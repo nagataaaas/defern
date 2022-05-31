@@ -1,3 +1,7 @@
+# v1.0.0
+- added `defer`
+- deprecated `defern`, `deferm_this`, `deferner`, use `defer` instead
+
 # v0.0.4
 - The variable name of `Defern` created with `@defern_this` is now sticking to the rule.
 
