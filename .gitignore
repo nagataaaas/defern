@@ -1,4 +1,4 @@
 .idea
 .pypirc
 defern/__pycache__
-defern.egg-info/*
+defern.egg-info
