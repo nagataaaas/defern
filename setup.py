@@ -9,44 +9,37 @@ installation:
 `$ pip install defern`
 
 ```python
-from defern import defern, deferner, defern_this, here
+from defern import defer, here
 
-def defer_multiple_function(frame):
-    defern(lambda: print("it's middle 7th"), frame=frame)
-    defern(lambda: print("it's middle 8th"), frame=frame)
+# note that defer is `last in first out`
+def main():
+    defer(print)('5th')
+    defer(print)('4th')
 
-print("Hi")
+    main_frame = here()
 
-defern(lambda: print("it's middle 1st"))  # you can pass function to run after return.
-defern(lambda: print("it's middle 2nd"))
-defern(print, "it's middle 3rd")  # passed args and kwargs after function will given to function.
+    def tmp():
+        defer(print, main_frame)('3rd')
+        # this will be called after the return of main()
 
-@deferner
-def defer_this(number: str):
-    print("it's middle", number)  # you can create function which runs after return with `@deferner`
+        defer(print)('1st')
+        # this will be called after the return of tmp()
 
-defer_this("4th")
-defer_this("5th", frame=here())
+    tmp()
+    defer(print)('2nd')
 
-@defern_this  # wrap function to create procedure which automatically runs after return
-def defer_this_now():
-    print("it's middle 6th")
 
-defer_multiple_function(here())  # here() to get currentFrame and pass it to `defern` or function created with `deferner`
-                                 # with name `frame` will create `defern` to that frame
+defer(print)('6th')
+main()
 
-print('ended')
-
-# Hi
-# ended
-# it's middle 1st
-# it's middle 2nd
-# it's middle 3rd
-# it's middle 4th
-# it's middle 5th
-# it's middle 6th
-# it's middle 7th
-# it's middle 8th
+# output
+# ------
+# 1st
+# 2nd
+# 3rd
+# 4th
+# 5th
+# 6th
 ```
 """
 
